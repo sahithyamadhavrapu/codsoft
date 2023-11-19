@@ -1,0 +1,56 @@
+.row1,.row2,.row3,.row5,.row6{
+	height:75px;
+}
+.form{
+	padding-top: 91px;
+	padding-left: 546px;
+}
+body{
+	background: #F1F1F1;
+}
+
+.result{
+	width: 280px;
+	height:75px;
+	background: #435665;
+	color: white;
+	border: 1px solid black;
+	font-size: 30px;
+	text-align: right;
+}
+
+.allcol{
+	width: 70px;
+	height:75px;
+	background: black;
+}
+.number{
+	width: 70px;
+	height: 75px;
+	background: white;
+	border: 1px solid black;
+	font-size: 30px;
+}
+.operator{
+	width: 70px;
+	height: 75px;
+	background: #DF9271;
+	font-size: 30px;
+	border: none;
+	border: 1px solid black;
+	border-right: 2px solid black; 
+}
+.clear{
+	width:280px;
+	height:75px;
+	background: #DEDEDE;
+	border:none;
+	border: 1px solid black;
+	border-bottom: 2px solid black;
+	border-left:2px solid black;
+	border-right:2px solid black;
+	font-size: 30px;
+}
+.left{
+	border-left: 2px solid black;
+}

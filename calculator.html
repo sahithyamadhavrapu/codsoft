@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="calculator.css">
+</head>
+
+<body >
+	<div class="form">
+		<div class="row row1">
+			<div class="inputbox"><input type="text" class="result" name="answer"></div>
+		</div>
+		<div class="row row2">
+			<div class="allcol">
+				<button onclick="updateresult(7)" class="number left">7</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult(8)" class="number">8</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult(9)" class="number">9</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult('*')" class="operator">x</button>
+			</div>
+		</div>
+		<div class="row row3">
+			<div class="allcol">
+				<button onclick="updateresult(4)" class="number left">4</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult(5)" class="number">5</button>
+			</div>
+			<div class="allcol">
+				<button  onclick="updateresult(6)" class="number">6</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult('-')" class="operator">-</button>
+			</div>
+		</div>
+		<div class="row row4">
+			<div class="allcol">
+				<button onclick="updateresult(1)" class="number left">1</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult(2)" class="number">2</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult(3)" class="number">3</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult('+')" class="operator">+</button>
+			</div>
+		</div>
+		<div class="row row5">
+			<div class="allcol">
+				<button onclick="updateresult(0)" class="number left">0</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult('.')"  class="number">.</button>
+			</div>
+			<div class="allcol">
+				<button onclick="showresult()"class="number">=</button>
+			</div>
+			<div class="allcol">
+				<button onclick="updateresult('/')"class="operator">/</button>
+			</div>
+		</div>
+		<div class="row row6">
+			<button onclick="clearresult()" class="clear">Clear</button>
+		</div>
+	</div>
+
+</body>
+<script>
+	function updateresult(a){
+		document.getElementsByName('answer')[0].value += a;
+	}
+
+	function clearresult(){
+		document.getElementsByName('answer')[0].value = "";
+	}
+	function showresult(){
+		var d = document.getElementsByName('answer')[0].value;
+		var c = eval(d)
+		document.getElementsByName('answer')[0].value = c;
+}
+	
+</script>
+</html>

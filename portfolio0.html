@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio Website</title>
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js">
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                font-family: Poppins;
+                scroll-behavior: smooth;
+            }
+
+            :root {
+                --primary: #e41736;
+                --para: #342d42;
+                --bg: #f7f7f7;
+            }
+
+            p {
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--para);
+                line-height: 25px;
+            }
+
+            i {
+                font-size: 19px;
+                margin: 0 4px;
+                color: var(--para);
+                cursor: pointer;
+                transition: all .4s ease-in-out;
+            }
+
+            .social-icons i:hover {
+                color: var(--primary);
+            }
+
+            .buttons {
+                margin: 34px 0 64px 0;
+            }
+
+            .btn {
+                padding: 13px 23px;
+                border-radius: 7px;
+                border: 2px solid var(--primary);
+                text-decoration: none;
+                font-size: 15px;
+                margin: 0 8px;
+                font-weight: 500;
+                color: var(--primary);
+                transition: all .5s ease;
+            }
+
+            .btn:hover {
+                background-color: var(--primary);
+                color: #fff;
+            }
+
+            .heading {
+                font-size: 22px;
+                color: var(--primary);
+                margin-bottom: 13px;
+            }
+
+            .para {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 27px;
+                color: #342d42;
+            }
+
+            .flex {
+                display: flex;
+                align-items: center;
+            }
+
+            .flex i {
+                font-size: 16px;
+                margin-right: 9px;
+                color: var(--primary);
+            }
+
+
+
+            /* -------- Home Section Css --------- */
+
+            .home-section {
+                width: 100%;
+                height: auto;
+                background-color: var(--bg);
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 60px 11% 0;
+                position: relative;
+            }
+
+            .person-detail {
+                text-align: center;
+            }
+
+            .designation {
+                opacity: .9;
+            }
+
+            .name {
+                font-size: 34px;
+                color: var(--primary);
+            }
+
+            .social-icons,
+            .scroll-down {
+                position: absolute;
+                transform: rotate(90deg);
+                bottom: 100px;
+            }
+
+            .social-icons {
+                left: 7%;
+            }
+
+            .social-icons i {
+                transform: rotate(-90deg);
+            }
+
+            .scroll-down {
+                right: 7%;
+                font-size: 17px;
+            }
+
+            .scroll-down::after,
+            .social-icons::after {
+                position: absolute;
+                content: '';
+                width: 50px;
+                height: 2px;
+                border-radius: 10px;
+                background-color: var(--para);
+                left: -60px;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: .8;
+            }
+
+            .hire-btn {
+                background-color: var(--primary);
+                color: #fff;
+            }
+
+            .hire-btn:hover {
+                background: none;
+                color: var(--primary);
+            }
+
+            span {
+                color: var(--primary);
+                font-weight: 500;
+            }
+
+
+
+            /* --------  About Section Css --------- */
+
+            .about-section {
+                width: 100%;
+                height: auto;
+                padding: 80px 11%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .about-container {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                margin-top: 65px;
+            }
+
+            .aboutimg-box {
+                margin-right: 70px;
+            }
+            /* --------  Services Section CSS  -------- */
+
+            .service-section,
+            .portfolio-section,
+            .contact-section,
+            .testi-section {
+                width: 100%;
+                height: auto;
+                padding: 110px 12%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background-color: var(--bg);
+            }
+
+            .service-container {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-gap: 50px;
+                margin-top: 80px;
+            }
+
+            .service-container .service-box {
+                border-radius: 8px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                padding: 35px 20px;
+                box-shadow: -2px 8px 35px rgba(51, 51, 51, 0.084);
+                border: 2px solid #fff;
+                transition: all .5s ease;
+                cursor: pointer;
+                background-color: #fff;
+            }
+
+            .service-box:hover {
+                border: 2px solid var(--primary);
+            }
+
+            .service-box .number {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                border: 1.5px solid var(--primary);
+                font-size: 25px;
+                display: grid;
+                place-items: center;
+                color: var(--primary);
+                font-weight: 700;
+                transition: all .5s ease-in-out;
+            }
+
+            .service-box .title {
+                font-size: 18px;
+                font-weight: 600;
+                margin: 16px 0 12px 0;
+                color: var(--primary);
+            }
+
+            .service-box .para {
+                font-size: 14px;
+                line-height: 23px;
+                text-align: center;
+                margin-bottom: 23px;
+            }
+
+            .service-box .service-btn {
+                padding: 8px 20px;
+                font-size: 14px;
+                margin-bottom: 20px;
+                border: 1.8px solid var(--primary);
+            }
+
+
+
+            /* --------  Later Section CSS  -------- */
+
+            .later-section {
+                width: 100%;
+                height: auto;
+                padding: 50px 13%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: var(--primary);
+                color: #fff;
+            }
+
+            .later-section .text-area h4 {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .later-section .text-area p {
+                font-size: 15px;
+                opacity: .8;
+            }
+
+            .later-section .later-btn {
+                border: 2px solid #fff;
+                color: #fff;
+                padding: 10px 29px;
+            }
+
+            .later-section .later-btn:hover {
+                border: 2px solid #fff;
+                color: var(--primary);
+                background-color: #fff;
+            }
+
+
+            /* --------  Contact Section CSS  -------- */
+
+            .contact-container {
+                width: 100%;
+                padding: 0 20%;
+                margin-top: 80px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .contact-container .fullName {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 20px;
+            }
+
+            #email {
+                margin: 20px 0;
+            }
+
+            .contact-container input {
+                outline: none;
+                width: 100%;
+                height: 45px;
+                padding: 0 15px;
+                border-radius: 5px;
+                border: 1.5px solid var(--para);
+                font-size: 15px;
+                letter-spacing: .5px;
+                transition: all .2s;
+            }
+
+            .contact-container textarea {
+                width: 100%;
+                outline: none;
+                padding: 15px;
+                border-radius: 5px;
+                border: 1.5px solid var(--para);
+                font-size: 15px;
+                letter-spacing: .5px;
+                margin-bottom: 30px;
+                transition: all .2s;
+            }
+
+            input:focus,
+            textarea:focus {
+                border: 1.5px solid var(--primary);
+            }
+
+            .contact-container .contact-btn {
+                padding: 11px 30px;
+                border: 1.5px solid var(--primary);
+            }
+
+
+
+
+            /* --------  Footer Section CSS  -------- */
+            .footer-section {
+                width: 100%;
+                height: auto;
+                padding: 20px 10%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                background-color: var(--primary);
+            }
+
+            .footer-section .social-links {
+                display: flex;
+                align-items: center;
+                margin-bottom: 12px;
+            }
+
+            .social-links .link {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                margin-right: 15px;
+                display: grid;
+                place-items: center;
+                transition: all .4s ease;
+                cursor: pointer;
+            }
+
+            .social-links .link:hover {
+                background-color: #fff;
+            }
+
+            .social-links .link:hover i {
+                color: var(--primary);
+            }
+
+            .social-links .link i {
+                color: #fff;
+                transition: all .4s ease;
+            }
+
+            .footer-section .tagline {
+                font-size: 17px;
+                color: #fff;
+            }
+
+
+
+
+            /* ------- Media Queries ------- */
+
+            @media (max-width:1150px) {
+
+                /* .abukout-section, .service-section, */
+                .portfolio-section, {
+                    padding: 110px 8%;
+                }
+            }
+
+            @media (max-width:900px) {
+
+                .about-section,
+                .service-section,
+                .portfolio-section, {
+                    padding: 110px 13%;
+                }
+
+                .about-section {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+
+                .about-container {
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+
+                .aboutimg-box {
+                    margin-bottom: 45px;
+                }
+
+                .service-container,
+                .portfolio-container {
+                    display: grid;
+                    grid-template-columns: repeat(2, 1fr);
+                }
+
+                .contact-container {
+                    padding: 0 12%;
+                }
+            }
+
+            @media (max-width:740px) {
+
+                .about-section,
+                .service-section,
+                .portfolio-section,{
+                    padding: 110px 8%;
+                }
+
+                .about-container {
+                    flex-direction: column;
+                }
+
+                .contact-container {
+                    padding: 0 8%;
+                }
+            }
+
+            @media (max-width:590px) {
+
+                .about-section,
+                .service-section,
+                .portfolio-section, {
+                    padding: 110px 13%;
+                }
+
+                .about-container {
+                    flex-direction: column;
+                }
+
+                .service-container,
+                .portfolio-container {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+
+                .fullName {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- ------ Home Section ------- -->
+        <div class="home-section" id="homeSection">
+            <div class="person-detail">
+                <p class="greetings">Hello, i'm</p>
+                <h2 class="name">M.LAKSHMI SAHITHYA</h2>
+                <p class="designation">Full Stack Developer</p>
+                <div class="buttons">
+                    <a href="#" class="btn cv-btn">Download CV</a>
+                    <a href="#" class="btn hire-btn">Hire Me</a>
+                </div>
+            </div>
+            <div class="person-img">
+                <img src="C:\Users\91949\OneDrive\Desktop\New folder\intershipcodes\portfolio\portfolio.png" class="home-img" width="350px">
+            </div>
+            <div class="social-icons">
+                <i class="fa-brands fa-github"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+            <p class="scroll-down">Scroll Down</p>
+        </div>
+
+        <!-- ------ About Section ------- -->
+        <div class="about-section" id="aboutSection">
+            <p class="service-subHeading subHeading">what i am ?</p>
+            <h4 class="service-heading heading">About Me</h4>
+            <div class="about-container">
+                <div class="aboutimg-box">
+                    <img src="C:\Users\91949\OneDrive\Desktop\New folder\intershipcodes\portfolio\portfolio.png" width="390px">
+                </div>
+                <div class="details-box">
+                    <h4 class="heading">My Story -</h4>
+                    <p class="para"> My name is <span>M.Lakshmi Sahithya</span>.I am pursuing my B.Tech 2nd year in Institute of Aeronautical Engineering College Hyderabad. I am from Computer Science and Information Technology branch. I am passionate about my work. Because I love what I do, I have a steady source of motivation that drives me to do my best.</p>  
+                </div>
+            </div>
+        </div>
+
+        <!-- ------ Service Section ------- -->
+        <div class="service-section" id="serviceSection">
+            <p class="service-subHeading subHeading">what i know ?</p>
+            <h4 class="service-heading heading">MY SKILLS</h4>
+            <div class="service-container">
+                <div class="service-box">
+                    <div class="number">01</div>
+                    <h4 class="title">HTML</h4>
+                    <p class="para">I learned HTML via through online platforms ,currently I am doing a internship IN front end development using the concepts of html and trying to  be excel in HTML</p>
+                    <a href="#" class="btn service-btn">Read More</a>
+                </div>
+           <div class="service-box">
+                    <div class="number">02</div>
+                    <h4 class="title">CSS</h4>
+                    <p class="para">I learned CSS via through online platforms ,currently I am doing a internship IN front end development using the concepts of CSS and trying to  be excel in CSS</p>
+                    <a href="#" class="btn service-btn">Read More</a>
+                </div>
+          <div class="service-box">
+                    <div class="number">03</div>
+                    <h4 class="title">JAVA SCRIPT</h4>
+                    <p class="para">I learned JAVA SCRIPT via through online platforms ,currently I am doing a internship on front end development using the concepts of html and trying to  be excel in JAVA SCRIPT</p>
+                    <a href="#" class="btn service-btn">Read More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- ------ Potfolio Section ------- -->
+        <div class="portfolio-section" id="portfolioSection">
+            <p class="folio-subHeading subHeading">what i did ?</p>
+            <h4 class="folio-heading heading">Our Portfolio</h4>
+            <div class="portfolio-container">
+                <div class="img-box">
+                    <img src="C:\Users\91949\OneDrive\Desktop\New folder\intershipcodes\portfolio\html.png">
+                    <p class="img-title">HTML</p>
+                </div>
+                <div class="img-box">
+                    <img src="C:\Users\91949\OneDrive\Desktop\New folder\intershipcodes\portfolio\css.png">
+                    <p class="img-title">CSS</p>
+                </div>
+                <div class="img-box">
+                    <img src="C:\Users\91949\OneDrive\Desktop\New folder\intershipcodes\portfolio\java script.png">
+                    <p class="img-title">"JAVA SCRIPTING"</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ------ Later Section ------- -->
+        <div class="later-section">
+            <div class="text-area">
+                <h4>Want to work with me ?</h4>
+                <p>Always feel free to Contact & Hire me</p>
+            </div>
+            <a href="#" class="later-btn btn">Hire Me</a>
+        </div>
+
+        
+
+        <!-- ------ Contact Section ------- -->
+        <div class="contact-section" id="contactSection">
+            <p class="contact-subHeading subHeading">How can you communicate ?</p>
+            <h4 class="contact-heading heading">Contact Me</h4>
+            <div class="contact-container">
+                <div class="fullName">
+                    <input type="text" placeholder="first name">
+                    <input type="text" placeholder="last name">
+                </div>
+                <input type="email" id="email" placeholder="your email">
+                <textarea cols="30" rows="8" placeholder="your message"></textarea>
+                <a href="#" class="contact-btn btn">Send message</a>
+            </div>
+        </div>
+
+        <!-- ------ Footer Section ------- -->
+        <div class="footer-section">
+            <div class="social-links">
+                <div class="link">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-instagram"></i>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-youtube"></i>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-facebook"></i>
+                </div>
+            </div>
+            <p class="tagline">Copyright @2023 All rights reserved | This is made by M.LAKSHMI SAHITHYA </p>
+        </div>
+    </body>
+</html>
